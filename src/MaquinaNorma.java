@@ -1,10 +1,10 @@
 public class MaquinaNorma {
-    public void adicionaAB(int A, int B){
+    public int adicionaAB(int A, int B){
         while(B != 0){
             A = A + 1;
             B = B - 1;
         }
-        System.out.println("Soma: " + A);
+        return A;
     }
 
     public void adicionaABusandoC(int A, int B, int C){
@@ -54,5 +54,39 @@ public class MaquinaNorma {
             }
         }
         System.out.println("Multiplicação: " + E);
+    }
+
+    public void adicionaABcomNegativo(int A, int B, int B1){
+        while(B != 0){
+            if(B1 == 1){
+                A = A - 1;
+            }
+            else{
+                A = A + 1;
+            }
+            B = B - 1;
+        }
+        System.out.println("Soma: " + A);
+    }
+
+    public void verificaPrimo(int A){
+        int B = 0, C = 0;
+        C = adicionaAB(C, A);
+        C--;
+        while(C != 0 && B != 1) {
+            if(A % C == 0){
+                B++;
+            }
+            if(B != 1){
+                C--;
+            }
+        }
+        C--;
+        if(C != 0){
+            System.out.println("Não é primo");
+        }
+        else{
+            System.out.println("É primo");
+        }
     }
 }
